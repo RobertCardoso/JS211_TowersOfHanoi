@@ -30,6 +30,11 @@ const printStacks = () => {
 }
 
 // Next, what do you think this function should do?
+/**
+ * this function move the piece based on the strings that the user provided.
+ * @param {string} startStack 
+ * @param {string} endStack 
+ */
 const movePiece = (startStack, endStack) => {
   let move = stacks[startStack].pop();
   stacks[endStack].push(move);
@@ -38,6 +43,13 @@ const movePiece = (startStack, endStack) => {
 }
 
 // Before you move, should you check if the move it actually allowed? Should 3 be able to be stacked on 2
+/**
+ * 
+ * @param {string} startStack 
+ * @param {string} endStack 
+ * @returns 
+ */
+
 const isLegal = (startStack, endStack) => {
   if (stacks[startStack].length > 0) {
   if (stacks[endStack].length == 0 || stacks[endStack].slice(-1) > stacks[startStack].slice(-1)) {
@@ -50,6 +62,10 @@ const isLegal = (startStack, endStack) => {
 }
 
 // What is a win in Towers of Hanoi? When should this function run?
+/**
+ * 
+ * @returns true if the user won the game.
+ */
 const checkForWin = () => {
   // Your code here
 if (stacks['b'].length == 4 || stacks['c'].length == 4) {
@@ -60,6 +76,11 @@ if (stacks['b'].length == 4 || stacks['c'].length == 4) {
 }
 
 // When is this function called? What should it do with its argument?
+// /**
+//  * This function judje if the move is legal and if the player won the game.
+ * @param {string} startStack 
+ * @param {string} endStack 
+//  **/
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
   if (isLegal(startStack, endStack)){
@@ -68,7 +89,7 @@ const towersOfHanoi = (startStack, endStack) => {
     console.log("ILLEGAL MOVE");
   }
   if (checkForWin()){
-    console.log("YOU WON!")
+    console.log("YOU WON!");
   }
 
 
