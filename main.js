@@ -76,11 +76,11 @@ if (stacks['b'].length == 4 || stacks['c'].length == 4) {
 }
 
 // When is this function called? What should it do with its argument?
-// /**
-//  * This function judje if the move is legal and if the player won the game.
+/**
+* This function judje if the move is legal and if the player won the game.
  * @param {string} startStack 
  * @param {string} endStack 
-//  **/
+*/
 const towersOfHanoi = (startStack, endStack) => {
   // Your code here
   if (isLegal(startStack, endStack)){
